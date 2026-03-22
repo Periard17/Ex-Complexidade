@@ -1,0 +1,18 @@
+pub fn verificar_primeiro(lista: &[i32]) -> Option<i32> {
+    lista.first().copied()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn lista_com_elementos() {
+        assert_eq!(verificar_primeiro(&[10, 20, 30]), Some(10));
+    }
+
+    #[test]
+    fn lista_vazia() {
+        assert_eq!(verificar_primeiro(&[]), None);
+    }
+}
